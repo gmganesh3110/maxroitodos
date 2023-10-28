@@ -1,7 +1,9 @@
 # maxroitodos
 
-npm install
 # to install all packages
+npm install
 
-npm start
 # to start the program
+npm start
+
+# This is project is Nodejs project for crud operations
