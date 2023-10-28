@@ -7,3 +7,6 @@ npm install
 npm start
 
 # This is project is Nodejs project for crud operations
+
+# to test the program
+npm test
