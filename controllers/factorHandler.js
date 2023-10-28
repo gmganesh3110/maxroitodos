@@ -42,7 +42,10 @@ exports.createOne = (Model) =>
 // reusable function for find all collections in document
 exports.findAll = (Model) =>
     catchAsync(async (req, res, next) => {
-        const data = await Model.find();
+        const page = req.body.page * 1 || 1;
+        const limit = req.body.limit * 1 || 100;
+        const skip = (page - 1) * limit;
+        const data = await Model.find().skip(skip).limit(limit);
         res.status(200).json({
             status: "success",
             data,

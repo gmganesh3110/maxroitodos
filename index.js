@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv')
 const mongoose = require('mongoose');
-
+const cors = require("cors")
 // importing files
 const todoRouter = require("./routes/todoRouter.js");
 const errorHandler = require('./utils/errorHandler.js');
@@ -15,6 +15,7 @@ dotenv.config()
 const app = express();
 app.use(morgan("dev"));
 app.use(bodyParser.json());
+app.use(cors())
 // using router files
 app.use("/api", todoRouter);
 
