@@ -22,7 +22,7 @@ exports.updateOne = (Model) =>
         if (!doc) {
             return next(new AppError(`No doc found`, 404));
         }
-        res.status(200).json({
+        res.status(201).json({
             status: "success",
             data: doc,
         });
