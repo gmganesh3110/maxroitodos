@@ -43,7 +43,7 @@ exports.createOne = (Model) =>
 exports.findAll = (Model) =>
     catchAsync(async (req, res, next) => {
         let data;
-        if (page && limit) {
+        if (req.body.page && req.body.limit) {
             const page = req.body.page * 1 || 1;
             const limit = req.body.limit * 1 || 100;
             const skip = (page - 1) * limit;
